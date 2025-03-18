@@ -5,9 +5,12 @@
 
 #include <QMutex>
 #include <QElapsedTimer>
+#include <QPicture>
+
 
 extern "C"
 {
+#include "libavcodec/avcodec.h"
 #include "libavformat/avformat.h"
 #include "libavutil/avutil.h"
 #include "libswscale/swscale.h"
@@ -47,17 +50,17 @@ namespace OrientView
 
 		QMutex decoderMutex;
 
-		AVFormatContext* formatContext = nullptr;
-		AVCodecContext* videoCodecContext = nullptr;
-		AVStream* videoStream = nullptr;
-		AVFrame* frame = nullptr;
-		AVPacket packet;
-		int videoStreamIndex = 0;
+ 	AVFormatContext* formatContext = nullptr;
+ 	AVCodecContext* videoCodecContext = nullptr;
+ 	AVStream* videoStream = nullptr;
+ 	AVFrame* frame = nullptr;
+ 	AVPacket packet;
+ 	int videoStreamIndex = 0;
 
-		SwsContext* swsContext = nullptr;
-		SwsContext* swsContextGrayscale = nullptr;
-		AVPicture* convertedPicture = nullptr;
-		AVPicture* convertedPictureGrayscale = nullptr;
+ 	SwsContext* swsContext = nullptr;
+ 	SwsContext* swsContextGrayscale = nullptr;
+ 	AVFrame* convertedPicture = nullptr;
+ 	AVFrame* convertedPictureGrayscale = nullptr;
 
 		int frameWidth = 0;
 		int frameHeight = 0;
