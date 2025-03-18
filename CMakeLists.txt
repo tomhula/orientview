@@ -63,12 +63,8 @@ set(OrientView_resource_files
         "src/../misc/icons/video-x-generic.svg"
 )
 
-qt_add_resources(orientview "OrientView"
-        PREFIX
-        "/icons"
-        FILES
-        ${OrientView_resource_files}
-)
+qt_add_resources(RESOURCES src/OrientView.qrc)
+target_sources(orientview PRIVATE ${RESOURCES})
 
 if(UNIX)
     target_include_directories(orientview PRIVATE
