@@ -1,5 +1,6 @@
 /.idea/
 /cmake-build-debug-orientview-docker/
+/cmake-build-release-orientview-docker/
 
 /bin
 /build
