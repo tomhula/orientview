@@ -145,6 +145,13 @@ install(TARGETS orientview
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
+install(DIRECTORY data DESTINATION ${CMAKE_INSTALL_BINDIR})
+add_custom_command(TARGET orientview POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_SOURCE_DIR}/data $<TARGET_FILE_DIR:orientview>/data)
+
+
+
 # Consider using qt_generate_deploy_app_script() for app deployment if
 # the project can use Qt 6.3. In that case rerun qmake2cmake with
 # --min-qt-version=6.3.
