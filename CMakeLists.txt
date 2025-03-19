@@ -78,7 +78,6 @@ if(UNIX)
             lsmash
             opencv_core
             opencv_imgproc
-            opencv_photo
             opencv_video
             swresample
             swscale

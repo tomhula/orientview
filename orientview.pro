@@ -6,7 +6,7 @@ QT += core gui opengl svg widgets xml
 
 unix {
     # QMAKE_CXXFLAGS += -Werror
-    LIBS += -lavcodec -lavformat -lavutil -lswresample -lswscale -lopencv_core -lopencv_imgproc -lopencv_photo -lopencv_video -lx264 -llsmash
+    LIBS += -lavcodec -lavformat -lavutil -lswresample -lswscale -lopencv_core -lopencv_imgproc -lopencv_video -lx264 -llsmash
     
     target.path = $$PREFIX/opt/orientview
     target.files = orientview data
