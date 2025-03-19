@@ -11,6 +11,8 @@ unix {
     target.path = $$PREFIX/opt/orientview
     target.files = orientview data
     
+    INCLUDEPATH += /usr/include/opencv4
+    
     INSTALLS += target
     
     TEMP_CXX = $$(CXX)
