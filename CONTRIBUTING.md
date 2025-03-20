@@ -26,3 +26,7 @@ This docker image includes everything needed to compile and run the project as w
 1. Go to `File -> Settings -> Build, Execution, Deployment -> CMake`
 2. Choose your CMake profile or make a new one
 3. Set the toolchain to the Docker toolchain
+
+## 4. Allow docker to connect to X11
+
+1. Run `xhost +local:docker`
